@@ -1,0 +1,14 @@
+Knot Studio
+Copyright 2026 Xiang Li
+
+Third-party data
+
+The knot data under data/ and tools/io/knotinfo.csv is derived from KnotInfo
+("KnotInfo: Table of Knot Invariants" by Charles Livingston and Allison H.
+Moore, https://knotinfo.org). That data is not covered by the license in
+LICENSE. Cite KnotInfo and follow its terms when reusing it.
+
+The connected quandle operation tables in static/quandle.json are operation
+tables for connected quandles of size <= 9, computed for this project. They
+are released under the same license as the code, to the extent the author can
+license them.
