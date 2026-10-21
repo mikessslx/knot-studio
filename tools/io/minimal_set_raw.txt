@@ -1,0 +1,90 @@
+Distinguishing 3484 pairs from 84 knots...
+Solver: gurobi
+
+Solution #1:
+1. Dihedral(27) (total 1997, unique 3) (or Alexander(Z27, t=8), Alexander(Z27, t=17))
+   3_1, 9_1
+   8_10, 8_20
+   8_21, 9_24
+2. Alexander(Z29, t=3) (total 320, unique 3) (or Alexander(Z29, t=10))
+   7_2, 9_43
+   9_14, 9_36
+   9_18, 9_32
+3. Dihedral(58) (total 243, unique 3)
+   6_2, 8_12
+   8_1, 8_13
+   8_17, 9_7
+4. Alexander(Z69, t=20) (total 1974, unique 3) (or Alexander(Z69, t=38))
+   8_14, 9_33
+   9_15, 9_17
+   9_33, 9_8
+5. Dihedral(85) (total 1535, unique 9)
+   4_1, 9_13
+   5_1, 6_2
+   7_1, 8_16
+   7_2, 9_44
+   8_14, 9_31
+   8_15, 9_28
+   8_2, 9_3
+   9_31, 9_8
+   9_36, 9_49
+6. Alexander(Z91, t=6) (total 1218, unique 5) (or Alexander(Z91, t=76))
+   6_2, 9_9
+   8_1, 9_30
+   8_4, 9_36
+   8_7, 9_5
+   9_26, 9_3
+7. Alexander(Z91, t=18) (total 1139, unique 3) (or Alexander(Z91, t=44), Alexander(Z91, t=60), Alexander(Z91, t=86))
+   6_2, 9_19
+   6_3, 9_3
+   9_22, 9_36
+8. Alexander(Z91, t=48) (total 1285, unique 3) (or Alexander(Z91, t=55))
+   6_2, 9_20
+   8_17, 9_3
+   9_10, 9_15
+9. Dihedral(92) (total 395, unique 4) (or Alexander(Z92, t=45))
+   6_2, 8_7
+   8_6, 9_3
+   9_15, 9_34
+   9_5, 9_9
+10. Alexander(Z95, t=17) (total 1475, unique 10) (or Alexander(Z95, t=28), Alexander(Z95, t=47), Alexander(Z95, t=93))
+   4_1, 9_39
+   6_2, 7_6
+   6_2, 9_32
+   7_1, 9_27
+   7_2, 7_3
+   7_2, 9_36
+   7_3, 9_36
+   7_6, 9_32
+   8_15, 9_16
+   9_14, 9_43
+11. Alexander(F4, t=α) (total 1841, unique 10) (or Connected Quandle 4_1)
+   3_1, 9_15
+   6_2, 9_36
+   7_1, 9_42
+   7_2, 9_32
+   8_1, 8_14
+   8_1, 9_8
+   8_4, 9_9
+   9_11, 9_38
+   9_13, 9_3
+   9_18, 9_43
+12. Alexander(Z3[i], t=i) (total 1463, unique 6) (or Connected Quandle 9_2)
+   5_2, 7_1
+   6_2, 9_3
+   8_17, 9_20
+   8_6, 8_7
+   9_13, 9_36
+   9_26, 9_9
+13. Alexander(Z7[i], t=i) (total 864, unique 5)
+   5_1, 9_31
+   6_2, 8_14
+   6_2, 9_8
+   8_1, 9_36
+   8_4, 9_30
+14. Connected Quandle 6_1 (total 2023, unique 2) (or Connected Quandle 6_2)
+   8_20, 9_1
+   9_28, 9_29
+
+
+Solver finished in 2.95s. Total 1 minimal sets found!

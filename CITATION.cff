@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Knot Studio: quandle coloring and cocycle invariants for distinguishing prime knots with fewer than 10 crossings"
+type: software
+authors:
+  - family-names: Li
+    given-names: Xiang
+    affiliation: "Guangdong Technion - Israel Institute of Technology (GTIIT), Shantou, China"
+repository-code: "https://github.com/mikessslx/knot-studio"
+url: "https://knot.cc.cd"
+abstract: >-
+  Interactive demo and research code that distinguishes prime knots with fewer than 10 crossings using quandle coloring counts and quandle 2-cocycle state-sum invariants. It encodes KnotInfo PD codes as a signed crossing-arc model, counts colorings by pruned depth-first search, Gaussian elimination over prime fields and Smith normal form over Z_n, selects a small distinguishing family of quandles by minimum set cover (integer programming), and refines that family with cocycle invariants.
+keywords:
+  - knot theory
+  - quandle
+  - cocycle invariant
+  - set cover
+  - computational topology
+license: MIT
+version: 1.0.0
+date-released: "2026-10-20"
+references:
+  - type: generic
+    title: "KnotInfo: Table of Knot Invariants"
+    authors:
+      - family-names: Livingston
+        given-names: Charles
+      - family-names: Moore
+        given-names: Allison H.
+    url: "https://knotinfo.org"
+    notes: "Source of the knot PD codes used in data/"

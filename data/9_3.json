@@ -1,0 +1,79 @@
+{
+  "name": "9_3",
+  "arcs": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "crossings": [
+    {
+      "id": 0,
+      "type": "positive",
+      "over": 5,
+      "under_in": 0,
+      "under_out": 1
+    },
+    {
+      "id": 1,
+      "type": "positive",
+      "over": 7,
+      "under_in": 1,
+      "under_out": 2
+    },
+    {
+      "id": 2,
+      "type": "positive",
+      "over": 6,
+      "under_in": 2,
+      "under_out": 3
+    },
+    {
+      "id": 3,
+      "type": "positive",
+      "over": 8,
+      "under_in": 3,
+      "under_out": 4
+    },
+    {
+      "id": 4,
+      "type": "positive",
+      "over": 0,
+      "under_in": 4,
+      "under_out": 5
+    },
+    {
+      "id": 5,
+      "type": "positive",
+      "over": 1,
+      "under_in": 5,
+      "under_out": 6
+    },
+    {
+      "id": 6,
+      "type": "positive",
+      "over": 2,
+      "under_in": 6,
+      "under_out": 7
+    },
+    {
+      "id": 7,
+      "type": "positive",
+      "over": 3,
+      "under_in": 7,
+      "under_out": 8
+    },
+    {
+      "id": 8,
+      "type": "positive",
+      "over": 4,
+      "under_in": 8,
+      "under_out": 0
+    }
+  ]
+}

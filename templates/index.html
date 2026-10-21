@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knot Studio Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Knot Studio Web</h1>
+            <p>Oriented Knot Workspace</p>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <label><input type="radio" name="inputMode" value="drawing" checked>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    Drawing Mode
+                </label>
+                <label><input type="radio" name="inputMode" value="json">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    PD Code Mode
+                </label>
+            </div>
+
+            <section id="drawingModeContainer" class="panel">
+                <div class="canvas-container">
+                    <canvas id="drawingBoard"></canvas>
+                    <div class="controls">
+                        <select id="knotSelect">
+                            <option value="">Load Prime Knots...</option>
+                            <option value="0_1">0_1 Unknot</option>
+                            <option value="3_1">3_1 Trefoil</option>
+                            <option value="4_1">4_1 Figure-8</option>
+                            <option value="5_1">5_1 Cinquefoil</option>
+                        </select>
+                        <button id="clearBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            Clear
+                        </button>
+                        <button id="undoBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                            Undo
+                        </button>
+                        <button id="saveBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                            Save
+                        </button>
+                        <button id="loadBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            Load
+                        </button>
+                        <input type="file" id="fileInput" class="hidden" accept=".json">
+                        <button id="recognizeBtn" class="primary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Recognize Knot
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="PDCodeModeContainer" class="panel hidden">
+                <label class="turbo-label" data-demo-lock>
+                    <input type="checkbox" id="turboModeCheckbox">
+                    <span class="gradient-text">Turbo</span>
+                </label>
+                <div id="normalPDInput">
+                    <textarea id="PDCodeInput" rows="12"
+                        placeholder='Paste PD code here ({"arcs": [...], "crossings": [...]})'></textarea>
+                </div>
+                <div id="turboModeInput" class="hidden">
+                    <div class="turbo-columns">
+                        <div>
+                            <div class="turbo-header">
+                                <strong class="panel-heading">Knots</strong>
+                                <label><input type="checkbox" id="toggleAllKnots"> Select All</label>
+                            </div>
+                            <div id="knotFilesList" class="turbo-list-box"></div>
+                        </div>
+                        <div>
+                            <div class="turbo-header">
+                                <strong class="panel-heading">Quandles</strong>
+                                <label><input type="checkbox" id="toggleAllQuandles"> Select All</label>
+                            </div>
+                            <div id="quandleTypesList" class="turbo-list-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="results-container">
+                <div id="identifySection" class="identify-section hidden">
+                    <button id="identifyBtn" class="primary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Identify Knot
+                    </button>
+                    <div id="identifyResult"></div>
+                </div>
+
+                <div id="recognitionStatus"></div>
+
+                <div id="crossingChoices" class="crossing-choices"></div>
+
+                <section class="panel quandle-section">
+                    <h3>Quandle Input</h3>
+                    <div class="quandle-container">
+                        <div class="quandle-controls">
+                            <label for="quandleType">Type:</label>
+                            <select id="quandleType">
+                                <option value="dihedral">Dihedral</option>
+                                <option value="alexander">Alexander (Z_q)</option>
+                                <option value="alexander_f4">Alexander (F_4)</option>
+                                <option value="alexander_f8">Alexander (F_8)</option>
+                                <option value="alexander_zn_i">Alexander (Z_n[i])</option>
+                                <option value="conjugation">Conjugation</option>
+                                <option value="trivial">Trivial</option>
+                                <option value="custom">Custom</option>
+                            </select>
+
+                            <div id="params-alexander-f4" class="quandle-params hidden">
+                                <p class="param-desc">x ▷ y = αx + (1-α)y</p>
+                            </div>
+
+                            <div id="params-alexander-f8" class="quandle-params hidden">
+                                <label>t: <select id="param-f8-t">
+                                    <option value="2">α</option>
+                                    <option value="3">α+1</option>
+                                </select></label>
+                                <p class="param-desc">x ▷ y = tx + (1-t)y</p>
+                            </div>
+
+                            <div id="params-alexander-zn_i" class="quandle-params hidden">
+                                <label>n: <select id="param-zni-n">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                </select></label>
+                                <br>
+                                <label>t (real): <select id="param-zni-real"></select></label>
+                                <label>t (imag): <select id="param-zni-imag"></select></label>
+                                <p class="param-desc">x ▷ y = tx + (1-t)y</p>
+                            </div>
+
+                            <div id="params-dihedral" class="quandle-params">
+                                <label>n: <select id="param-n">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select></label>
+                                <p class="param-desc">x ▷ y = 2y - x (mod n)</p>
+                            </div>
+
+                            <div id="params-conjugation" class="quandle-params hidden">
+                                <label>n: <select id="param-sn-n">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select></label>
+                                <p class="param-desc">x ▷ y = yxy⁻¹</p>
+                            </div>
+
+                            <div id="params-alexander" class="quandle-params hidden">
+                                <label>q: <select id="param-q">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select></label>
+                                <label>α: <select id="param-alpha"></select></label>
+                                <p class="param-desc">x ▷ y = αx + (1-α)y (mod q)</p>
+                            </div>
+
+                            <div id="params-trivial" class="quandle-params hidden">
+                                <label>Size: <select id="param-size">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select></label>
+                                <p class="param-desc">x ▷ y = x</p>
+                            </div>
+                        </div>
+
+                        <textarea id="quandleInput" rows="10" cols="50"></textarea>
+
+                        <div class="mirror-container hidden">
+                            <canvas id="mirrorCanvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="solver-controls">
+                        <select id="solverMethod">
+                            <option value="enum">Enumeration</option>
+                            <option value="dfs">DFS</option>
+                            <option value="algebra">Algebraic</option>
+                            <option value="propagation">Propagation</option>
+                            <option value="linear">Linear</option>
+                            <option value="snf" disabled>SNF</option>
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+
+                    <div class="controls" data-demo-lock>
+                        <button id="calculateBtn" class="primary">Calculate Colorings</button>
+                        <button id="stopBtn" class="hidden danger">Stop</button>
+                    </div>
+                </section>
+
+                <div id="coloringResults"></div>
+
+                <section class="panel quandle-section section-divider">
+                    <h3>Cocycle</h3>
+                    <p class="param-desc">Compute φ: Q × Q → Z<sub>q</sub></p>
+                    <div class="cocycle-controls" data-demo-lock>
+                        <label>q: <select id="cocycleGroupSize">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="7">7</option>
+                        </select></label>
+                        <label>Solver: <select id="cocycleSolverMethod">
+                            <option value="enum">Enumeration</option>
+                            <option value="linear" selected>Linear</option>
+                        </select></label>
+                        <label><input type="checkbox" id="cocycleJustReps" checked> Just Reps</label>
+                        <button id="computeCocyclesBtn" class="primary">Compute Cocycle</button>
+                        <button id="stopCocyclesBtn" class="hidden danger">Stop</button>
+                    </div>
+                    <div id="cocycleResults"></div>
+
+                    <div class="section-divider">
+                        <h3>Cocycle Invariant</h3>
+                        <p class="param-desc">Compute Φ<sub>φ</sub>(K) = Σ t<sup>W(C)</sup></p>
+                        <div class="controls" data-demo-lock>
+                            <button id="computeInvariantBtn" class="primary">Compute Cocycle Invariant</button>
+                            <button id="stopInvariantBtn" class="hidden danger">Stop</button>
+                        </div>
+                        <div id="invariantResults"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="demoModal" class="demo-modal hidden" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+        <div class="demo-modal-card">
+            <button id="demoModalClose" class="demo-modal-close" type="button" aria-label="Close demo mode notice">×</button>
+            <span class="demo-modal-badge">Public demo</span>
+            <h2 id="demoModalTitle">Heavy computation is disabled</h2>
+            <p>
+                This public demo keeps CPU-intensive jobs turned off so the shared server stays responsive.
+                To run colorings, cocycles, invariants or Turbo mode, run Knot Studio Web locally.
+            </p>
+            <div class="demo-modal-actions">
+                <a id="demoRepoLink" class="button-link primary" href="{{ repo_url }}" target="_blank" rel="noopener noreferrer">
+                    Open GitHub
+                </a>
+                <button id="demoModalOk" type="button">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.KNOT_DEMO_MODE = {{ demo_mode | tojson }};
+        window.KNOT_REPO_URL = {{ repo_url | tojson }};
+    </script>
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
