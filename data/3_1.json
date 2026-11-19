@@ -1,0 +1,31 @@
+{
+  "name": "3_1",
+  "arcs": [
+    0,
+    1,
+    2
+  ],
+  "crossings": [
+    {
+      "id": 0,
+      "type": "positive",
+      "over": 2,
+      "under_in": 0,
+      "under_out": 1
+    },
+    {
+      "id": 1,
+      "type": "positive",
+      "over": 0,
+      "under_in": 1,
+      "under_out": 2
+    },
+    {
+      "id": 2,
+      "type": "positive",
+      "over": 1,
+      "under_in": 2,
+      "under_out": 0
+    }
+  ]
+}

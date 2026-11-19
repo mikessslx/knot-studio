@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    image: knot-studio:latest
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    environment:
+      PUBLIC_DEMO_MODE: "${PUBLIC_DEMO_MODE:-1}"
+      PROJECT_REPO_URL: "${PROJECT_REPO_URL:-https://github.com/mikessslx/knot-studio}"
+    volumes:
+      - "${DATA_DIR:-./data}:/app/data:ro"

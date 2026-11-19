@@ -1,0 +1,86 @@
+Distinguishing 3484 pairs from 84 knots...
+Solver: scipy
+
+Solution #1:
+1. Alexander(Z54, t=5) (total 1997, unique 3) (or Alexander(Z54, t=11), Alexander(Z54, t=23), Alexander(Z54, t=47))
+   3_1, 9_1
+   8_10, 8_20
+   8_21, 9_24
+2. Alexander(Z55, t=4) (total 1447, unique 8) (or Alexander(Z55, t=14))
+   4_1, 9_13
+   5_1, 6_2
+   5_1, 8_12
+   6_2, 8_12
+   7_6, 9_32
+   8_14, 9_31
+   9_31, 9_8
+   9_36, 9_49
+3. Dihedral(69) (total 2059, unique 3)
+   6_2, 8_7
+   8_6, 9_3
+   9_5, 9_9
+4. Alexander(Z85, t=33) (total 1322, unique 10) (or Alexander(Z85, t=67))
+   3_1, 9_29
+   4_1, 9_39
+   6_2, 7_6
+   7_2, 9_36
+   7_2, 9_44
+   8_12, 9_32
+   8_15, 9_28
+   8_2, 9_3
+   8_3, 9_7
+   9_36, 9_44
+5. Alexander(Z87, t=5) (total 1989, unique 2) (or Alexander(Z87, t=35))
+   6_2, 9_19
+   8_17, 9_7
+6. Alexander(Z87, t=32) (total 1994, unique 2) (or Alexander(Z87, t=68))
+   7_6, 9_18
+   9_14, 9_36
+7. Dihedral(91) (total 1218, unique 2)
+   7_3, 9_36
+   8_1, 8_13
+8. Alexander(Z91, t=11) (total 1383, unique 6) (or Alexander(Z91, t=32), Alexander(Z91, t=37), Alexander(Z91, t=58))
+   6_2, 9_9
+   8_4, 9_22
+   8_4, 9_36
+   8_7, 9_5
+   9_22, 9_36
+   9_26, 9_3
+9. Alexander(Z91, t=48) (total 1285, unique 4) (or Alexander(Z91, t=55))
+   6_2, 9_20
+   8_2, 8_3
+   9_21, 9_36
+   9_3, 9_7
+10. Alexander(Z92, t=15) (total 320, unique 4) (or Alexander(Z92, t=43), Alexander(Z92, t=61), Alexander(Z92, t=89))
+   8_14, 9_33
+   9_15, 9_17
+   9_21, 9_25
+   9_33, 9_8
+11. Alexander(Z3[i], t=i) (total 1463, unique 5) (or Connected Quandle 9_2)
+   6_2, 9_3
+   8_6, 8_7
+   9_13, 9_36
+   9_20, 9_7
+   9_26, 9_9
+12. Alexander(Z7[i], t=i) (total 864, unique 5)
+   5_1, 9_31
+   6_2, 8_14
+   6_2, 9_8
+   7_3, 8_1
+   8_13, 9_36
+13. Conjugation(S4) (total 2737, unique 12)
+   6_1, 8_11
+   6_2, 9_36
+   7_2, 7_6
+   8_13, 8_14
+   8_13, 9_8
+   8_20, 9_1
+   8_4, 9_9
+   9_11, 9_38
+   9_13, 9_3
+   9_15, 9_16
+   9_20, 9_21
+   9_28, 9_29
+
+
+Solver finished in 6.18s. Total 1 minimal sets found!

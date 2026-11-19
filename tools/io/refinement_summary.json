@@ -1,0 +1,379 @@
+{
+  "knot_count": 84,
+  "quandle_count": 2947,
+  "pair_count": 3486,
+  "coloring_distinguished_pairs": 3484,
+  "coloring_minimum_size": 13,
+  "coloring_selected": [
+    "Dihedral(27)",
+    "Dihedral(69)",
+    "Alexander(Z69, t=20)",
+    "Dihedral(85)",
+    "Dihedral(87)",
+    "Alexander(Z87, t=32)",
+    "Alexander(Z91, t=6)",
+    "Alexander(Z91, t=9)",
+    "Alexander(Z95, t=18)",
+    "Alexander(Z3[i], t=i)",
+    "Alexander(Z3[i], t=1+i)",
+    "Alexander(Z7[i], t=i)",
+    "Conjugation(S4)"
+  ],
+  "same_coverage_combined_minimum_size": 13,
+  "same_coverage_combined_selected": [
+    "Dihedral(27)",
+    "Dihedral(41)",
+    "Alexander(Z57, t=17)",
+    "Alexander(Z65, t=9)",
+    "Dihedral(69)",
+    "Alexander(Z77, t=2)",
+    "Alexander(Z85, t=33)",
+    "Dihedral(87)",
+    "Alexander(Z91, t=6)",
+    "Alexander(F4, t=\u03b1)",
+    "Alexander(Z3[i], t=i)",
+    "Alexander(Z3[i], t=1+i)",
+    "Connected Quandle 9_7"
+  ],
+  "cocycle_group_sizes": [
+    2,
+    3,
+    5,
+    7
+  ],
+  "cocycle_quandles": [
+    "Alexander(F4, t=\u03b1)",
+    "Alexander(F8, t=\u03b1)",
+    "Alexander(F8, t=\u03b1+1)",
+    "Alexander(Z3[i], t=1+i)",
+    "Alexander(Z3[i], t=2)",
+    "Alexander(Z3[i], t=2+i)",
+    "Alexander(Z3[i], t=i)",
+    "Alexander(Z9, t=2)",
+    "Alexander(Z9, t=5)",
+    "Connected Quandle 3_1",
+    "Connected Quandle 4_1",
+    "Connected Quandle 5_1",
+    "Connected Quandle 5_2",
+    "Connected Quandle 5_3",
+    "Connected Quandle 6_1",
+    "Connected Quandle 6_2",
+    "Connected Quandle 7_1",
+    "Connected Quandle 7_2",
+    "Connected Quandle 7_3",
+    "Connected Quandle 7_4",
+    "Connected Quandle 7_5",
+    "Connected Quandle 8_1",
+    "Connected Quandle 8_2",
+    "Connected Quandle 8_3",
+    "Connected Quandle 9_1",
+    "Connected Quandle 9_2",
+    "Connected Quandle 9_3",
+    "Connected Quandle 9_4",
+    "Connected Quandle 9_5",
+    "Connected Quandle 9_6",
+    "Connected Quandle 9_7",
+    "Connected Quandle 9_8",
+    "Dihedral(10)",
+    "Dihedral(6)",
+    "Dihedral(9)"
+  ],
+  "cocycle_evaluations": 140,
+  "combined_distinguished_pairs": 3485,
+  "combined_minimum_size": 13,
+  "combined_selected": [
+    "Dihedral(41)",
+    "Alexander(Z67, t=32)",
+    "Dihedral(69)",
+    "Alexander(Z81, t=2)",
+    "Alexander(Z85, t=33)",
+    "Dihedral(87)",
+    "Alexander(Z91, t=6)",
+    "Alexander(Z91, t=9)",
+    "Dihedral(95)",
+    "Alexander(F4, t=\u03b1)",
+    "Alexander(Z3[i], t=i)",
+    "Alexander(Z7[i], t=i)",
+    "Connected Quandle 9_7"
+  ],
+  "combined_aliases": [
+    [
+      "Dihedral(82)"
+    ],
+    [
+      "Alexander(Z67, t=44)"
+    ],
+    [],
+    [
+      "Alexander(Z81, t=41)"
+    ],
+    [
+      "Alexander(Z85, t=67)"
+    ],
+    [],
+    [
+      "Alexander(Z91, t=76)"
+    ],
+    [
+      "Alexander(Z91, t=16)",
+      "Alexander(Z91, t=74)",
+      "Alexander(Z91, t=81)"
+    ],
+    [],
+    [
+      "Connected Quandle 4_1"
+    ],
+    [
+      "Connected Quandle 9_2"
+    ],
+    [],
+    []
+  ],
+  "unresolved_pairs": [
+    [
+      "8_14",
+      "9_8"
+    ]
+  ],
+  "newly_distinguished_pairs": [
+    [
+      "7_4",
+      "9_2"
+    ]
+  ],
+  "published_nine": [
+    "Dihedral(27)",
+    "Alexander(Z29, t=3)",
+    "Alexander(Z69, t=20)",
+    "Dihedral(85)",
+    "Alexander(Z91, t=48)",
+    "Dihedral(92)",
+    "Alexander(Z95, t=17)",
+    "Alexander(F4, t=\u03b1)",
+    "Connected Quandle 6_1"
+  ],
+  "published_nine_uncovered_pairs": [
+    [
+      "5_1",
+      "9_31"
+    ],
+    [
+      "5_2",
+      "7_1"
+    ],
+    [
+      "6_2",
+      "6_3"
+    ],
+    [
+      "6_2",
+      "8_12"
+    ],
+    [
+      "6_2",
+      "8_14"
+    ],
+    [
+      "6_2",
+      "9_19"
+    ],
+    [
+      "6_2",
+      "9_26"
+    ],
+    [
+      "6_2",
+      "9_3"
+    ],
+    [
+      "6_2",
+      "9_8"
+    ],
+    [
+      "6_2",
+      "9_9"
+    ],
+    [
+      "6_3",
+      "8_12"
+    ],
+    [
+      "6_3",
+      "8_14"
+    ],
+    [
+      "6_3",
+      "9_19"
+    ],
+    [
+      "6_3",
+      "9_26"
+    ],
+    [
+      "6_3",
+      "9_3"
+    ],
+    [
+      "6_3",
+      "9_8"
+    ],
+    [
+      "6_3",
+      "9_9"
+    ],
+    [
+      "7_4",
+      "9_2"
+    ],
+    [
+      "7_5",
+      "8_2"
+    ],
+    [
+      "8_1",
+      "8_13"
+    ],
+    [
+      "8_1",
+      "8_4"
+    ],
+    [
+      "8_1",
+      "9_13"
+    ],
+    [
+      "8_12",
+      "8_14"
+    ],
+    [
+      "8_12",
+      "9_19"
+    ],
+    [
+      "8_12",
+      "9_26"
+    ],
+    [
+      "8_12",
+      "9_3"
+    ],
+    [
+      "8_12",
+      "9_8"
+    ],
+    [
+      "8_12",
+      "9_9"
+    ],
+    [
+      "8_13",
+      "8_4"
+    ],
+    [
+      "8_13",
+      "9_13"
+    ],
+    [
+      "8_14",
+      "9_19"
+    ],
+    [
+      "8_14",
+      "9_26"
+    ],
+    [
+      "8_14",
+      "9_3"
+    ],
+    [
+      "8_14",
+      "9_9"
+    ],
+    [
+      "8_17",
+      "9_20"
+    ],
+    [
+      "8_17",
+      "9_7"
+    ],
+    [
+      "8_4",
+      "9_13"
+    ],
+    [
+      "8_6",
+      "8_7"
+    ],
+    [
+      "8_6",
+      "9_5"
+    ],
+    [
+      "8_7",
+      "9_5"
+    ],
+    [
+      "9_11",
+      "9_15"
+    ],
+    [
+      "9_19",
+      "9_26"
+    ],
+    [
+      "9_19",
+      "9_3"
+    ],
+    [
+      "9_19",
+      "9_8"
+    ],
+    [
+      "9_19",
+      "9_9"
+    ],
+    [
+      "9_20",
+      "9_7"
+    ],
+    [
+      "9_22",
+      "9_30"
+    ],
+    [
+      "9_22",
+      "9_36"
+    ],
+    [
+      "9_26",
+      "9_3"
+    ],
+    [
+      "9_26",
+      "9_8"
+    ],
+    [
+      "9_26",
+      "9_9"
+    ],
+    [
+      "9_3",
+      "9_8"
+    ],
+    [
+      "9_3",
+      "9_9"
+    ],
+    [
+      "9_30",
+      "9_36"
+    ],
+    [
+      "9_8",
+      "9_9"
+    ]
+  ],
+  "solver": "scipy",
+  "optimum_proved": true
+}

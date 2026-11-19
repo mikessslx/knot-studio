@@ -1,0 +1,7 @@
+# Web app
+flask==3.1.3
+numpy==2.0.2
+gunicorn==23.0.0
+
+# Only for the set-cover search
+ortools==9.15.6755

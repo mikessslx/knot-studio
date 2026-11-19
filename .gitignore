@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Scratch
+plan/
+tools/data/
+tools/data_results/
+
+# Large intermediates
+tools/io/turbo_results_999.csv
+tools/io/turbo_results_new.csv
+tools/io/turbo_results_old.csv
+tools/io/turbo_results_cli.csv
+tools/io/minimal_set_快.txt
+tools/io/minimal_set_慢.txt
+
+# Deployment
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
